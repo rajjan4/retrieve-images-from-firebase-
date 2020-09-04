@@ -96,7 +96,21 @@ public class MainActivity extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
 
                         holder.setDetails(getApplicationContext(),model.getImage(),model.getTitle());
+                        String name = getItem(position).getTitle();
+                        String url = getItem(position).getImage();
 
+
+                        holder.cardView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                                intent.putExtra("n",name);
+                                intent.putExtra("u",url);
+                                startActivity(intent);
+
+                            }
+                        });
 
                     }
 
