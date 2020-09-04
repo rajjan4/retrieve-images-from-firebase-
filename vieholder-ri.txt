@@ -8,12 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
+    CardView cardView;
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
     }
@@ -22,6 +24,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView = itemView.findViewById(R.id.iv_item);
         TextView textView = itemView.findViewById(R.id.tv_item);
+        cardView = itemView.findViewById(R.id.cv_item);
 
         Picasso.get().load(image).into(imageView);
         textView.setText(title);
@@ -30,3 +33,4 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         itemView.setAnimation(animation);
     }
 }
+
